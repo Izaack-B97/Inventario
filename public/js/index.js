@@ -1,0 +1,1 @@
+console.log('--- Entrando a index.js ---');

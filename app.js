@@ -4,11 +4,22 @@ let app = express();
 
 app.set('view engine', 'pug');
 
+// Carpeta donde se estaran los recursos estaticos
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    let js = [
+        {js: '/js/index.js'}
+    ];
+    res.render('index', {'js_src': js});
 });
+
+app.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });
+app.get('/carcasas', (req, res) => { res.render('modulos/listado_carcasas'); });
+app.get('/controles', (req, res) => { res.render('modulos/listado_controles'); });
+app.get('/servicios', (req, res) => { res.render('modulos/listado_servicios'); });
+app.get('/residenciales', (req, res) => { res.render('modulos/listado_residenciales'); });
+
 
 
 app.listen(8080, () => {
