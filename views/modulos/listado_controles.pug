@@ -1,5 +1,58 @@
 extends ../layout.pug
 
 block contenido
-    h1 Listado Controles
-    
+    section
+        .section-header
+            ol.breadcrumb.bg-light.letra-chica
+                li.breadcrumb-item
+                    a(href="/") Inicio
+                li.breadcrumb-item Controles
+                li.breadcrumb-item.active Listado    
+        .section-body
+            .row
+                .col-lg-10.offset-lg-1
+                    h3 Listado de Controles
+                .col-lg-10.offset-lg-1
+                    articule.margin-bottom-xl
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
+    section
+        .row
+            .col-lg-9.offset-lg-1
+                form(action="")
+                    .row    
+                        .col-lg-5                    
+                            .form-group
+                                label(for="search") Buscar
+                                input.form-control(name="search" type="text" placeholder="Buscar...") 
+                        
+                        .col-lg-2.offset-lg-5                   
+                            .form-group
+                                button.form-control.btn-primary(style="vertical-align: top;") Crear
+
+        .row    
+            .col-lg-9.offset-lg-1.text-primary
+                .row
+                    .col-lg-4
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam,
+                    .col-lg-4    
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+                    .col-lg-4    
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+                    .col-lg-4    
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+                    .col-lg-4    
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+                    .col-lg-4    
+                        .card.sombra.mt-3
+                            .card-body
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 

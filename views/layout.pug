@@ -9,14 +9,11 @@ html(lang="en")
 
     body
 
-        //h1 Hola Mundo esta es mi pagina principal
-        //p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quia laborum et maiores corporis velit debitis a iure. Ex illo voluptatem obcaecati quae odio magnam maxime quisquam consequuntur sed id.
-
-        div#wapper.d-flex
+        div#wrapper.d-flex
             //START SIDEBAR
-            #sidebar-wrapper.bg-warning.border-right
+            #sidebar-wrapper.bg-warning
                 div.sidebar-heading.text-white
-                    a(href="/") Cerrajeria Bustamante
+                    | Cerrajeria Bustamante
                 div.list-group.list-group-flush
                     a.list-group-item.list-group-item-action.bg-warning.text-white(href="/automotrices") Automotrices
                     a.list-group-item.list-group-item-action.bg-warning.text-white(href="/carcasas") Carcasas 
@@ -25,13 +22,24 @@ html(lang="en")
                     a.list-group-item.list-group-item-action.bg-warning.text-white(href="/residenciales") Residenciales
 
             //END SIDEBAR
-            //START PAGE-CONTENT
+            //START PAGE-CONTENT                
             #page-content-wrapper.bg-light
-                nav.navbar.navbar-expand-lg.navbar-light.bg-light
-                    //button#menu-toggle.btn.btn-primary Toggle Menu
-                    //button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+                    button#menu-toggle.btn.btn-primary Toggle Menu
+                    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                         span.navbar-toggler-icon
-                   
+                    
+                    #navbarSupportedContent.collapse.navbar-collapse
+                        ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+                            li.nav-item.dropdown
+                            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                | Opciones
+                            .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdown')
+                                a.dropdown-item(href='#') Perfil
+                                a.dropdown-item(href='#') Settings
+                                .dropdown-divider
+                                a.dropdown-item(href='#') Log Out
+
                 
                 block contenido
         
@@ -40,3 +48,8 @@ html(lang="en")
         script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
         script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
         script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+        script.
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });

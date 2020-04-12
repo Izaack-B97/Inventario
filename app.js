@@ -5,13 +5,13 @@ let app = express();
 app.set('view engine', 'pug');
 
 // Carpeta donde se estaran los recursos estaticos
-app.use(express.static('public'));
+app.use(express.static('public')); //Middleware que montara al servidor archivos estaticos
 
 app.get('/', (req, res) => {
-    let js = [
-        {js: '/js/index.js'}
+    let listado = [
+        { js: '/js/index.js' }
     ];
-    res.render('index', {'js_src': js});
+    res.render('index', {'js_src': listado});
 });
 
 app.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });
