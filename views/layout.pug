@@ -1,39 +1,42 @@
 doctype html
 head
-  title Sidebar 07
+  title Inventario - CB v1.0.0
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,90' rel='stylesheet')
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-  //link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='css/main.css')
   link(rel="stylesheet", href="template/css/style.css")
   link(rel="stylesheet", href="template/css/bootstrap.min.css")
 body  
   .wrapper.d-flex.align-items-stretch
     nav#sidebar.active.bg-warning
-      h1
-        a.logo(href='index.html') C.
-      ul.list-unstyled.components.mb-5
-        li.active
-          a(href='#')
-            span.fa.fa-home
-            |  Home
+      ul.list-unstyled#link-home
+        li  
+          h1.ml-3
+            a.logo(href='/')
+              span.fa.fa-home
+                h6 I C B
+      ul.list-unstyled.components.mb-5#sidebar-menu
         li
-          a(href='#')
-            span.fa.fa-user
-            |  About
+          a(href='/automotrices')
+            span.fa.fa-car
+            |  Automotriz
         li
-          a(href='#')
-            span.fa.fa-sticky-note
-            |  Blog
+          a(href='/carcasas')
+            span.fa.fa-square
+            |  Carcasas
         li
-          a(href='#')
-            span.fa.fa-cogs
-            |  Services
+          a(href='/controles')
+            span.fa.fa-sort-up
+            |  Controles
         li
-          a(href='#')
-            span.fa.fa-paper-plane
-            |  Contacts
+          a(href='/residenciales')
+            span.fa.fa-key
+            |  Residencial
+        li
+          a(href='/servicios')
+            span.fa.fa-wrench
+            |  Servicios
       .footer
         p
           | Copyright &copy;

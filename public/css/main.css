@@ -1,0 +1,14 @@
+/* START SIDEBAR */
+#sidebar-menu li:hover{
+  background: #e7d428; 
+}
+
+/* START COMPLEMENTOS */
+
+.bg-white{
+  background: #fff;
+}
+
+.letra-chica{
+  font-size: 13px;
+}
