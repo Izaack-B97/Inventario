@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     res.render('index', {'js_src': listado});
 });
 
+
 app.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });
 app.get('/carcasas', (req, res) => { res.render('modulos/listado_carcasas'); });
 app.get('/controles', (req, res) => { res.render('modulos/listado_controles'); });

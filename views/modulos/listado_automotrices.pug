@@ -3,7 +3,7 @@ extends ../layout.pug
 block contenido
     section
         .section-header
-            ol.breadcrumb.bg-light.letra-chica
+            ol.breadcrumb.bg-light.letra-chica.ml-3
                 li.breadcrumb-item
                     a(href="/") Inicio
                 li.breadcrumb-item Automotrices
@@ -13,11 +13,11 @@ block contenido
                 .col-lg-10.offset-lg-1
                     h3 Listado de Automoviles
                 .col-lg-10.offset-lg-1
-                    articule.margin-bottom-xl
+                    articule.margin-bottom-xl.text-primary
                         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
     section
         .row
-            .col-lg-9.offset-lg-1
+            .col-sm-9.offset-lg-1
                 form(action="")
                     .row    
                         .col-lg-5                    
@@ -27,32 +27,60 @@ block contenido
                         
                         .col-lg-2.offset-lg-5                   
                             .form-group
-                                button.form-control.btn.btn-primary(style="vertical-align: top;") Crear
+                                button.form-control.btn-primary(style="vertical-align: top;") Crear
 
-        .row.mb-5    
-            .col-lg-9.offset-lg-1.text-primary
-                .row
-                    .col-lg-4
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam,
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+        .row    
+            .col-sm-9.offset-lg-1
+                .row.mb-5
+                    .col-sm-12
+                        .card.shadow.p-3.mb-5.bg-white.rounded
+                            .card-body    
+                                table.table.table-stipped
+                                    thead
+                                        tr
+                                            th #
+                                            th Clave
+                                            th Existencia
+                                            th Precio
+                                            th Vendidas
+                                            th Actualizacion
+                                            th.text-right Acciones
+                                    tbody
+                                        tr
+                                            td 1
+                                            td R55
+                                            td 50
+                                            td $20
+                                            td 10
+                                            td 12 de abril del 2020
+                                            td.letra-chica.text-right  
+                                                a(href="#") Actualizar
+                                        tr
+                                            td 2
+                                            td R55
+                                            td 50
+                                            td $20
+                                            td 10
+                                            td 12 de abril del 2020
+                                            td.letra-chica.text-right  
+                                                a(href="#") Actualizar
+                                        tr
+                                            td 3
+                                            td R55
+                                            td 50
+                                            td $20
+                                            td 10
+                                            td 12 de abril del 2020
+                                            td.letra-chica.text-right  
+                                                a(href="#") Actualizar
+                                        tr
+                                            td 4
+                                            td R55
+                                            td 50
+                                            td $20
+                                            td 10
+                                            td 12 de abril del 2020
+                                            td.letra-chica.text-right  
+                                                a(href="#") Actualizar
+
+                                            

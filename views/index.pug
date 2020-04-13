@@ -1,53 +1,59 @@
 extends ./layout.pug
 block contenido
-    .container-fluid
+  .container
+      .section
+        .header  
+          h2.mb-4.text-primary Bienvenido a Cerrajeria Bustamante
+          p.lead
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         
-        h1.mt-4 Cerrajeria Bustamante
-        p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit vero aut cumque odio sapiente sint perspiciatis, iusto sunt quis tempora reprehenderit! Consectetur quisquam est, tempore totam eum iusto animi cupiditate.
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatem laboriosam ullam molestiae fugit provident magnam maxime, sit cumque illum fugiat quasi, velit quia mollitia ea aperiam a asperiores quos.
-                    
-        section
-            h2 Inventario
-            .container
-                .row
-                    .col-lg-12
-                        .card.shadow.p-3.mb-5.bg-white.rounded
-                            .card-body#table-section
-                                table.table.table-striped
+        .card.shadow.p-5.mb-5.bg-white.rounded
+          table.table.table-stipped
                                     thead
                                         tr
-                                            th(scope='col') #
-                                            th(scope='col') First
-                                            th(scope='col') Last
-                                            th(scope='col') Handle
+                                            th #
+                                            th Servicio
+                                            th Fecha
+                                            th Factura
+                                            th Opciones
                                     tbody
                                         tr
-                                            th(scope='row') 1
-                                            td Mark
-                                            td Otto
-                                            td @mdo
+                                            td 1
+                                            td Apertura Residencial
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica  
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
                                         tr
-                                            th(scope='row') 2
-                                            td Jacob
-                                            td Thornton
-                                            td @fat
+                                            td 2
+                                            td Apertura Automotriz
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica   
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
                                         tr
-                                            th(scope='row') 3
-                                            td Larry
-                                            td the Bird
-                                            td @twitter
+                                            td 3
+                                            td Reparaci&oacute;n de Cerradura
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica   
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
                                         tr
-                                            th(scope='row') 4
-                                            td Mark
-                                            td Otto
-                                            td @mdo
-                                        tr
-                                            th(scope='row') 5
-                                            td Jacob
-                                            td Thornton
-                                            td @fat
-                                        tr
-                                            th(scope='row') 6
-                                            td Larry
-                                            td the Bird
-                                            td @twitter
+                                            td 4
+                                            td Cambio de columna
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica
+                                                a(href="#") Eliminar 
+                                                | -
+                                                a(href="#") Ver Registro

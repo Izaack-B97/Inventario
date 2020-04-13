@@ -1,57 +1,66 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Cerrajeria Bustamante
-        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
-        link(rel="stylesheet", href="/css/style.css")
-        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
-    body
+doctype html
+head
+  title Sidebar 07
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,90' rel='stylesheet')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  //link(rel='stylesheet' href='css/style.css')
+  link(rel="stylesheet", href="template/css/style.css")
+  link(rel="stylesheet", href="template/css/bootstrap.min.css")
+body  
+  .wrapper.d-flex.align-items-stretch
+    nav#sidebar.active.bg-warning
+      h1
+        a.logo(href='index.html') C.
+      ul.list-unstyled.components.mb-5
+        li.active
+          a(href='#')
+            span.fa.fa-home
+            |  Home
+        li
+          a(href='#')
+            span.fa.fa-user
+            |  About
+        li
+          a(href='#')
+            span.fa.fa-sticky-note
+            |  Blog
+        li
+          a(href='#')
+            span.fa.fa-cogs
+            |  Services
+        li
+          a(href='#')
+            span.fa.fa-paper-plane
+            |  Contacts
+      .footer
+        p
+          | Copyright &copy;
+          script.
+            document.write(new Date().getFullYear());
+          |  All rights reserved | This template is made with 
+          i.icon-heart(aria-hidden='true')
+          |  by 
+          a(href='https://colorlib.com' target='_blank') Colorlib.com
+    // Page Content
+    #content.p-4.p-md-5
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        .container-fluid
+          button#sidebarCollapse.btn.btn-primary(type='button')
+            i.fa.fa-bars
+            span.sr-only Toggle Menu
+          button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            i.fa.fa-bars
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.nav.navbar-nav.ml-auto
+              li.nav-item
+                a.nav-link(href='#') Salir
+      
+      block contenido
+        //Area donde se dibujara el contenido
 
-        div#wrapper.d-flex
-            //START SIDEBAR
-            #sidebar-wrapper.bg-warning
-                div.sidebar-heading.text-white
-                    | Cerrajeria Bustamante
-                div.list-group.list-group-flush
-                    a.list-group-item.list-group-item-action.bg-warning.text-white(href="/automotrices") Automotrices
-                    a.list-group-item.list-group-item-action.bg-warning.text-white(href="/carcasas") Carcasas 
-                    a.list-group-item.list-group-item-action.bg-warning.text-white(href="/controles") Controles
-                    a.list-group-item.list-group-item-action.bg-warning.text-white(href="/servicios") Servicios
-                    a.list-group-item.list-group-item-action.bg-warning.text-white(href="/residenciales") Residenciales
-
-            //END SIDEBAR
-
-            //START PAGE-CONTENT                
-            #page-content-wrapper.bg-light
-                nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-                    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-                        
-                    
-                    #navbarSupportedContent.collapse.navbar-collapse
-                        ul.navbar-nav.ml-auto.mt-2.mt-lg-0
-                            li.nav-item.dropdown
-                            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                                | Opciones
-                            .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdown')
-                                a.dropdown-item(href='#') Perfil
-                                a.dropdown-item(href='#') Settings
-                                .dropdown-divider
-                                a.dropdown-item(href='#') Log Out
-
-                block contenido
-                    //- Area donde ira todo nuestro contenido
-                
-                //Boton flotante
-                button#btn-menu-toggle.btn.btn-dark
-                    i.fa.fa-bars
-   
-        script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
-        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
-        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
-        script.
-            $("#btn-menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
+  script(src='template/js/jquery.min.js')
+  script(src='template/js/popper.js')
+  script(src='template/js/bootstrap.min.js')
+  script(src='template/js/main.js')

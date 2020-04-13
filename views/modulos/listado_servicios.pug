@@ -2,7 +2,7 @@ extends ../layout.pug
 
 block contenido
    section
-        .section-header
+        .section-header.ml-3
             ol.breadcrumb.bg-light.letra-chica
                 li.breadcrumb-item
                     a(href="/") Inicio
@@ -31,28 +31,57 @@ block contenido
 
         .row    
             .col-sm-9.offset-lg-1.text-primary
-                .row
-                    .col-sm-4
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam,
-                    .col-sm-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-sm-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-sm-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-sm-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-sm-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+                .row.mb-5
+                    .col-sm-12
+                        .card.shadow.p-3.mb-5.bg-white.rounded
+                            .card-body    
+                                table.table.table-stipped
+                                    thead
+                                        tr
+                                            th #
+                                            th Servicio
+                                            th Fecha
+                                            th Factura
+                                            th Opciones
+                                    tbody
+                                        tr
+                                            td 1
+                                            td Apertura Residencial
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica  
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
+                                        tr
+                                            td 2
+                                            td Apertura Automotriz
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica   
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
+                                        tr
+                                            td 3
+                                            td Reparaci&oacute;n de Cerradura
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica   
+                                                a(href="#") Ver Registro
+                                                | -
+                                                a(href="#") Eliminar                                
+                                        tr
+                                            td 4
+                                            td Cambio de columna
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.letra-chica
+                                                a(href="#") Eliminar 
+                                                | -
+                                                a(href="#") Ver Registro
+                                            
