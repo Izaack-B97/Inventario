@@ -5,18 +5,23 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
   link(rel='stylesheet' href='css/main.css')
-  link(rel="stylesheet", href="template/css/style.css")
-  link(rel="stylesheet", href="template/css/bootstrap.min.css")
+  link(rel="stylesheet", href="js/template/css/style.css")
+  link(rel="stylesheet", href="js/template/css/bootstrap.min.css")
 body  
   .wrapper.d-flex.align-items-stretch
     nav#sidebar.active.bg-warning
-      ul.list-unstyled#link-home
+      //ul.list-unstyled#link-home
         li  
           h1.ml-3
             a.logo(href='/')
               span.fa.fa-home
-                h6 I C B
+                h6 Inicio
       ul.list-unstyled.components.mb-5#sidebar-menu
+        li
+          h5
+            a.logo(href="/")
+              span.fa.fa-home
+              | Inicio
         li
           a(href='/automotrices')
             span.fa.fa-car
@@ -42,10 +47,9 @@ body
           | Copyright &copy;
           script.
             document.write(new Date().getFullYear());
-          |  All rights reserved | This template is made with 
+          
           i.icon-heart(aria-hidden='true')
           |  by 
-          a(href='https://colorlib.com' target='_blank') Colorlib.com
     // Page Content
     #content.p-4.p-md-5
       nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
@@ -63,7 +67,9 @@ body
       block contenido
         //Area donde se dibujara el contenido
 
-  script(src='template/js/jquery.min.js')
-  script(src='template/js/popper.js')
-  script(src='template/js/bootstrap.min.js')
-  script(src='template/js/main.js')
+  //- Importamos los scripts y los iteramos
+  block scripts
+    include scripts
+      if js_src
+        each val in js_src
+          script(src=val.js)

@@ -1,28 +1,24 @@
-let express = require('express');
+const router = require('./routes/modulos');
+const morgan = require('morgan')
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
 
-let app = express();
 
+// Settings
 app.set('view engine', 'pug');
+app.set('port', process.env.PORT || 8000)
 
+// Middlewars
 // Carpeta donde se estaran los recursos estaticos
 app.use(express.static('public')); //Middleware que montara al servidor archivos estaticos
+app.use(bodyParser.urlencoded({ extended: true })); // Nos permitira leer los parametros que mandan en una peticion post
+app.use(morgan('dev')); // Utiliza morgan en forma de desarrollo
 
-app.get('/', (req, res) => {
-    let listado = [
-        { js: '/js/index.js' }
-    ];
-    res.render('index', {'js_src': listado});
-});
+// Routes
+app.use(router);
 
-
-app.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });
-app.get('/carcasas', (req, res) => { res.render('modulos/listado_carcasas'); });
-app.get('/controles', (req, res) => { res.render('modulos/listado_controles'); });
-app.get('/servicios', (req, res) => { res.render('modulos/listado_servicios'); });
-app.get('/residenciales', (req, res) => { res.render('modulos/listado_residenciales'); });
-
-
-
-app.listen(8080, () => {
-    console.log('El servidor esta corriendo en el puerto -> 8080');
+// Ejecutamos el server
+app.listen(app.get('port'), () => {
+    console.log('El servidor esta corriendo en el puerto -> ', app.get('port'));
 });  
