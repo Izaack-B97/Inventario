@@ -1,0 +1,1 @@
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\DELL\Documents\Diseño Web\CerrajeriaApp\inventariocerrajeria-firebase-adminsdk-mpm9t-122fcd3723.json"

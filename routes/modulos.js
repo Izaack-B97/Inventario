@@ -1,11 +1,27 @@
 const express = require('express');
 const router = express.Router();
+const admin = require('firebase-admin');
+
+const serviceAccount = require('../inventariocerrajeria-firebase-adminsdk-mpm9t-122fcd3723.json');
+
+// Configuramos la inicializacion en firebase
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://inventariocerrajeria.firebaseio.com/',
+});
+
+const db = admin.database();
 
 router.get('/', (req, res) => {
-    let listado = [
-        { js: '/js/index.js' }
-    ];
-    res.render('index', {'js_src': listado});
+    // db.ref('catalogos_menu').once('value', snapshot => {
+    //     const data = snapshot.val();
+
+    //     data.forEach(object => {
+    //         console.log(object.menu);
+    //     });
+
+    res.render('index', { data: '' });
+    // });
 });
 
 router.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });

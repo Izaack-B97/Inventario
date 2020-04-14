@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
-
 // Settings
 app.set('view engine', 'pug');
 app.set('port', process.env.PORT || 8000)
