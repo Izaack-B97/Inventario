@@ -10,48 +10,104 @@ block contenido
         .section-body
             .row
                 .col-lg-10.offset-lg-1
-                    h3 Listado de Residenciales
+                    h3.text-primary Listado de Residenciales
                 .col-lg-10.offset-lg-1
                     articule.margin-bottom-xl
                         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
-    section
-        .row
-            .col-lg-9.offset-lg-1
-                form(action="")
-                    .row    
-                        .col-lg-5                    
-                            .form-group
-                                label(for="search") Buscar
-                                input.form-control(name="search" type="text" placeholder="Buscar...") 
-                        
-                        .col-lg-2.offset-lg-5                   
-                            .form-group
-                                button.form-control.btn-primary(style="vertical-align: top;") Crear
-
+    section    
         .row    
-            .col-lg-9.offset-lg-1.text-primary
-                .row
-                    .col-lg-4
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam,
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
-                    .col-lg-4    
-                        .card.sombra.mt-3
-                            .card-body
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum tempora veniam reiciendis unde qui totam, 
+            .col-sm-10.offset-lg-1.text-primary
+                .row.mb-5
+                    .col-sm-12
+                        .card.shadow.p-3.mb-5.bg-white.rounded
+                            .card-body    
+                                h5.text-info Inventario Residencial
+                                table.table.table-stipped.table-hover#table-residencial
+                                    thead
+                                        tr
+                                            th #
+                                            th Residencial
+                                            th Fecha
+                                            th Factura
+                                            th.text-right Opciones
+                                    tbody
+                                        tr
+                                            td 1
+                                            td Apertura Residencial
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.p-1.float-right
+                                                button.btn.btn-outline-primary.ml-1.ver(type="button")
+                                                    i.fa.fa-eye
+                                                button.btn.btn-outline-success.ml-1(type="button")
+                                                    i.fa.fa-edit
+                                                button.btn.btn-outline-danger.ml-1(type="button")
+                                                    i.fa.fa-trash
+                                                 
+                                        tr
+                                            td 2
+                                            td Apertura Automotriz
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.float-right.p-1
+                                                button.btn.btn-outline-primary.ml-1.ver(type="button")
+                                                    i.fa.fa-eye
+                                                button.btn.btn-outline-success.ml-1(type="button")
+                                                    i.fa.fa-edit
+                                                button.btn.btn-outline-danger.ml-1(type="button")
+                                                    i.fa.fa-trash                         
+                                        tr
+                                            td 3
+                                            td Reparaci&oacute;n de Cerradura
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.float-right.p-1
+                                                button.btn.btn-outline-primary.ml-1.ver(type="button")
+                                                    i.fa.fa-eye
+                                                button.btn.btn-outline-success.ml-1(type="button")
+                                                    i.fa.fa-edit
+                                                button.btn.btn-outline-danger.ml-1(type="button")
+                                                    i.fa.fa-trash                            
+                                        tr
+                                            td 4
+                                            td Cambio de columna
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.text-right.p-1
+                                                button.btn.btn-outline-primary.ml-1.ver(type="button")
+                                                    i.fa.fa-eye
+                                                button.btn.btn-outline-success.ml-1(type="button")
+                                                    i.fa.fa-edit
+                                                button.btn.btn-outline-danger.ml-1(type="button")
+                                                    i.fa.fa-trash
+                                        tr
+                                            td 5
+                                            td Cambio de columna
+                                            td 12 de abril del 2020, 12:17pm
+                                            td.text-center 
+                                                input(type="checkbox" checked, disabled)
+                                            td.float-right.p-1
+                                                button.btn.btn-outline-primary.ml-1.ver(type="button")
+                                                    i.fa.fa-eye
+                                                button.btn.btn-outline-success.ml-1(type="button" data-toggle="modal" data-target="#modalNewIngreso")
+                                                    i.fa.fa-edit
+                                                button.btn.btn-outline-danger.ml-1(type="button")
+                                                    i.fa.fa-trash
+    
+    // Modal
+    #modalResidenciales.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalServiciosLabel' aria-hidden="true")
+        .modal-dialog(role="document")
+            .modal-content
+                .modal-header
+                    h5.modal-title Modal title
+                    button.close(type="button" data-dismiss="modal" aria-label="Close")
+                        span(aria-hidden) &times;
+                .modal-body
+                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                .modal-footer
+                    button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                    button.btn.btn-primary(type="button") Save Changes

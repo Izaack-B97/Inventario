@@ -1,3 +1,8 @@
+html{
+  overflow-x: hidden;
+}
+
+
 /* START SIDEBAR */
 #sidebar-menu li:hover{
   background: #e7d428; 
@@ -11,4 +16,10 @@
 
 .letra-chica{
   font-size: 13px;
+}
+
+/* MODALES */
+
+.center-modal-v100{
+  margin-top: 100px;
 }

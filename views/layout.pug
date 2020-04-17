@@ -3,10 +3,13 @@ head
   title Inventario - CB v1.0.0
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css")
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
   link(rel='stylesheet' href='css/main.css')
   link(rel="stylesheet", href="js/template/css/style.css")
   link(rel="stylesheet", href="js/template/css/bootstrap.min.css")
+  link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css")
+
 body  
   .wrapper.d-flex.align-items-stretch
     nav#sidebar.active.bg-warning
@@ -51,7 +54,7 @@ body
           i.icon-heart(aria-hidden='true')
           |  by 
     // Page Content
-    #content.p-4.p-md-5
+    #content
       nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         .container-fluid
           button#sidebarCollapse.btn.btn-primary(type='button')
@@ -66,7 +69,7 @@ body
       
       block contenido
         //Area donde se dibujara el contenido
-
+        
   //- Importamos los scripts y los iteramos
   block scripts
     include scripts

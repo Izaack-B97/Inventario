@@ -1,65 +1,32 @@
 extends ./layout.pug
 block contenido
-      .section
-        .header  
-          h2.mb-4.text-primary Bienvenido Jorge Bustamante !
-          p.lead
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        .card.shadow.p-5.mt-5.bg-white.rounded
-            //if data
-                each val in data
-                    p= val
-                    
-            //else 
-                p No hay nada
-          
-            table.table.table-stipped
-                                    thead
-                                        tr
-                                            th #
-                                            th Servicio
-                                            th Fecha
-                                            th Factura
-                                            th Opciones
-                                    tbody
-                                        tr
-                                            td 1
-                                            td Apertura Residencial
-                                            td 12 de abril del 2020, 12:17pm
-                                            td.text-center 
-                                                input(type="checkbox" checked, disabled)
-                                            td.letra-chica  
-                                                a(href="#") Ver Registro
-                                                | -
-                                                a(href="#") Eliminar                                
-                                        tr
-                                            td 2
-                                            td Apertura Automotriz
-                                            td 12 de abril del 2020, 12:17pm
-                                            td.text-center 
-                                                input(type="checkbox" checked, disabled)
-                                            td.letra-chica   
-                                                a(href="#") Ver Registro
-                                                | -
-                                                a(href="#") Eliminar                                
-                                        tr
-                                            td 3
-                                            td Reparaci&oacute;n de Cerradura
-                                            td 12 de abril del 2020, 12:17pm
-                                            td.text-center 
-                                                input(type="checkbox" checked, disabled)
-                                            td.letra-chica   
-                                                a(href="#") Ver Registro
-                                                | -
-                                                a(href="#") Eliminar                                
-                                        tr
-                                            td 4
-                                            td Cambio de columna
-                                            td 12 de abril del 2020, 12:17pm
-                                            td.text-center 
-                                                input(type="checkbox" checked, disabled)
-                                            td.letra-chica
-                                                a(href="#") Eliminar 
-                                                | -
-                                                a(href="#") Ver Registro
+    .row.px-5
+        .col-sm-12
+            .section
+                .header  
+                h1.header Dashboard
+                h3.mb-4.text-primary Bienvenido Jorge Bustamante !
+                p.lead
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
+        .col-sm-12
+            .section.text-white
+                .row
+                    .col-sm-4
+                        .card.shadow.p-3.mt-5.bg-primary.rounded
+                            .card-header Header
+                            .card-body
+                                h5.card-title.text-white Title
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa dolores ea, doloribus consequuntur ratione ipsam similique ut eos praesentium, eius iure reprehenderit exercitationem quaerat quos. Fugiat id fugit nobis.
+                    .col-sm-4
+                        .card.shadow.p-3.mt-5.bg-warning.rounded
+                            .card-header.text-white Header
+                            .card-body
+                                h5.card-title Title
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa dolores ea, doloribus consequuntur ratione ipsam similique ut eos praesentium, eius iure reprehenderit exercitationem quaerat quos. Fugiat id fugit nobis.
+                    .col-sm-4
+                        .card.shadow.p-3.mt-5.bg-success.rounded
+                            .card-header.text-white Header
+                            .card-body
+                                h5.card-title Title
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt quia natus delectus, nisi neque labore ipsa sapiente voluptate harum ullam doloremque facilis perferendis modi eum dolorem debitis dolor deleniti ad. 

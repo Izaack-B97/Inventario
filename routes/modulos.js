@@ -1,33 +1,44 @@
+//require('dotenv').config;
 const express = require('express');
 const router = express.Router();
-const admin = require('firebase-admin');
-
-const serviceAccount = require('../inventariocerrajeria-firebase-adminsdk-mpm9t-122fcd3723.json');
-
-// Configuramos la inicializacion en firebase
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://inventariocerrajeria.firebaseio.com/',
-});
-
-const db = admin.database();
 
 router.get('/', (req, res) => {
-    // db.ref('catalogos_menu').once('value', snapshot => {
-    //     const data = snapshot.val();
-
-    //     data.forEach(object => {
-    //         console.log(object.menu);
-    //     });
-
     res.render('index', { data: '' });
-    // });
 });
 
-router.get('/automotrices', (req, res) => { res.render('modulos/listado_automotrices'); });
-router.get('/carcasas', (req, res) => { res.render('modulos/listado_carcasas'); });
-router.get('/controles', (req, res) => { res.render('modulos/listado_controles'); });
-router.get('/servicios', (req, res) => { res.render('modulos/listado_servicios'); });
-router.get('/residenciales', (req, res) => { res.render('modulos/listado_residenciales'); });
+router.get('/automotrices', (req, res) => { 
+    let js = [
+        {js: '/js/modulos/listado_automotriz.js'}
+    ];
+    res.render('modulos/listado_automotrices', {'js_src': js}); 
+});
+
+router.get('/carcasas', (req, res) => { 
+    let js = [
+        {js: '/js/modulos/listado_carcasas.js'}
+    ];
+    res.render('modulos/listado_carcasas', {'js_src': js}); 
+});
+
+router.get('/controles', (req, res) => { 
+    let js = [
+        {js: '/js/modulos/listado_controles.js'}
+    ];
+    res.render('modulos/listado_controles', {'js_src': js}); 
+});
+
+router.get('/residenciales', (req, res) => { 
+    let js = [
+        {js: '/js/modulos/listado_residenciales.js'}
+    ];
+    res.render('modulos/listado_residenciales', {'js_src': js}); 
+});
+
+router.get('/servicios', (req, res) => {
+    let js = [
+        {js: '/js/modulos/listado_servicios.js'}
+    ];
+    res.render('modulos/listado_servicios', {'js_src': js}); 
+});
 
 module.exports = router;
