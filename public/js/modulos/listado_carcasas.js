@@ -5,5 +5,6 @@ console.log('--- Entrando a listado_carcasas.js ---');
     $('#table-carcasas').on('click', '.ver', function(){
         $('#modalCarcasas').modal(); 
     });
+    $('#table-carcasas').DataTable();
 
 })();

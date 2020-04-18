@@ -6,4 +6,5 @@ console.log('--- Entrando a listado_controles.js');
         $('#modalControles').modal(); 
     });
 
+    $('#table-controles').DataTable();
 })();

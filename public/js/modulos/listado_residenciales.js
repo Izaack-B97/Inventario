@@ -6,4 +6,5 @@ console.log('--- Entrando a listado_residenciales.js');
         $('#modalResidenciales').modal(); 
     });
 
+    $('#table-residencial').DataTable();
 })();

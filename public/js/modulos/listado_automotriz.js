@@ -2,8 +2,11 @@ console.log('--- Entrando a listado_automotriz.js ---');
 
 (function(){
 
-    $('#table-automotrices').on('click', '.ver', function(){
-        $('#modalAutomotris').modal(); 
+    $('#table-automotriz').on('click', 'tr', function(){
+        $('#modalAutomotris').modal();        
     });
+
+    $('#table-automotriz').DataTable();
+
 
 })();

@@ -6,4 +6,5 @@ console.log('--- Entrando a listado_servicios.js ---');
         $('#modalServicios').modal(); 
     });
 
+    $('#table-servicios').DataTable();
 })();
