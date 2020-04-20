@@ -2,7 +2,7 @@ console.log('--- Entrando a listado_automotriz.js ---');
 
 (function(){
 
-    $('#table-automotriz').on('click', 'tr', function(){
+    $('#btnCrear').on('click', function(){
         $('#modalAutomotris').modal();        
     });
 

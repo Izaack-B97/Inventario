@@ -19,6 +19,7 @@ block contenido
                                         .row
                                             .col-sm-12
                                                 h3.text-primary Listado de Automoviles
+                                                    button.btn.btn-outline-warning.float-right#btnCrear CREAR REGISTRO
                                             .col-lg-12
                                                 articule.margin-bottom-xl
                                                     p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
@@ -533,24 +534,41 @@ block contenido
         #modalAutomotris.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalAutomotricesLabel' aria-hidden="false")
             .modal-dialog.modal-dialog-centered.modal-lg(role="document")
                 .modal-content
-                    .modal-header
-                        h5.modal-title Informaci&oacute;n
-                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    .modal-header.bg-warning
+                        h5.modal-title(style="color: #ffffff;") CREAR REGISTRO
+                        button.close(type="button" data-dismiss="modal" aria-label="Close" style="color: #ffffff;")
                             span(aria-hidden) &times;
                     .modal-body
-                        h5 Popover in a modal
-                        p
-                            | This 
-                            a.btn.btn-secondary.popover-test(href='#', role='button', title='Popover title', data-content='Popover body content is set in this attribute.') button
-                            |  triggers a popover on click.
-                        hr
-                        h5 Tooltips in a modal
-                        p
-                            a.tooltip-test(href='#', title='Tooltip') This link
-                            |  and 
-                            a.tooltip-test(href='#', title='Tooltip') that link
-                            |  have tooltips on hover.
-                    .modal-footer
+                        form(method='POST')
+                            .row
+                                .col-sm-12
+                                    .form-group
+                                        label(for="Clave") Clave
+                                        input.form-control(type="text" name="Clave")
+                                .col-sm-12
+                                    .form-group
+                                        label(for="Cantidad") Existencia
+                                        input.form-control(type="number" name="Cantidad")
+                                .col-sm-12
+                                    .form-group
+                                        label(for="Control") Control
+                                        input.form-control(type="text" name="Control")
+                                .col-sm-12
+                                    .form-group
+                                        label(for="Tipo") Tipo
+                                        select#Tipo.form-control(name="Tipo")
+                                            option(value="")
+                                            option(value="Chip") Chip
+                                            option(value="Convencional") Convencional
+                                .col-sm-12
+                                    .form-group
+                                        label(for="Precio") Precio
+                                        input.form-control(type="text" name="Precio")
+                            .row
+                                .col-sm-12.text-right
+                                    button.btn.btn-outline-primary(type="submit") Actualizar
+                                    button.btn.btn-secondary.ml-2(type="button" data-dismiss="modal") Cancelar 
+                    //.modal-footer
                         button.btn.btn-outline-primary(type="button") Actualizar
                         button.btn.btn-secondary(type="button" data-dismiss="modal") Cancelar 
                                                 

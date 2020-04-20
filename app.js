@@ -11,8 +11,11 @@ app.set('port', process.env.PORT || 8000)
 // Middlewars
 // Carpeta donde se estaran los recursos estaticos
 app.use(express.static('public')); //Middleware que montara al servidor archivos estaticos
+app.set('public', __dirname + '/public');
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // Nos permitira leer los parametros que mandan en una peticion post
-app.use(morgan('dev')); // Utiliza morgan en forma de desarrollo
+app.use(morgan('dev')); // Utiliza morgan en forma de desarrollo, muestra las peticiones en consola
 
 // Routes
 app.use(router);

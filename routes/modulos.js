@@ -1,7 +1,10 @@
 //require('dotenv').config;
 const express = require('express');
 const router = express.Router();
+const admin = require('../private/firebase');
+const db = admin.database();
 
+// Establecemos las rutas GET
 router.get('/', (req, res) => {
     res.render('index', { data: '' });
 });
@@ -39,6 +42,28 @@ router.get('/servicios', (req, res) => {
         {js: '/js/modulos/listado_servicios.js'}
     ];
     res.render('modulos/listado_servicios', {'js_src': js}); 
+});
+
+
+// Establecemos las rutas POST
+router.post('/automotrices', (req, res) => {
+    console.log(req.body);
+    const newRegister = {
+        clave: req.body.Clave,
+        cantidad: req.body.Cantidad,
+        control: req.body.Control,
+        tipo: req.body.Tipo,
+        precio: req.body.Precio 
+    };
+
+    // Insertamos un nuenvo registro, y lo manejamos como una promesa
+    db.ref('catalogo_automoviles').push(newRegister)
+        .then(resp => {
+            res.render('modulos/listado_automotrices');
+        })
+        .catch(err => {
+            console.log('Error: ' + err);
+        });
 });
 
 module.exports = router;
