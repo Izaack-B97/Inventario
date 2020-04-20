@@ -20,13 +20,36 @@ block contenido
                                             .col-sm-12
                                                 h3.text-primary Listado de Automoviles
                                                     button.btn.btn-outline-warning.float-right#btnCrear CREAR REGISTRO
-                                            .col-lg-12
-                                                articule.margin-bottom-xl
+                                            .col-lg-12.my-3
+                                                articule
                                                     p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
                                     section    
                                         .row
                                             .col-sm-12    
-                                                table.table.table-stipped.table-hover#table-automotriz
+                                                table.table.table-striped.table-hover#table-automotriz
+                                                    thead
+                                                        tr
+                                                            td Clave
+                                                            td Existencia
+                                                            td Control
+                                                            td Precio
+                                                            td Tipo
+                                                            td Operaciones
+                                                            
+                                                    tbody
+                                                        each val in data
+                                                            tr    
+                                                                td= val.clave
+                                                                td= val.cantidad
+                                                                td= val.control
+                                                                td= val.precio
+                                                                td= val.tipo
+                                                                td.float-right
+                                                                    button.btn.btn-outline-primary
+                                                                        i.fa.fa-edit
+
+
+                                                //table.table.table-stipped.table-hover#table-automotriz
                                                     thead.text-warning
                                                         tr
                                                         th Name

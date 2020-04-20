@@ -13,7 +13,12 @@ router.get('/automotrices', (req, res) => {
     let js = [
         {js: '/js/modulos/listado_automotriz.js'}
     ];
-    res.render('modulos/listado_automotrices', {'js_src': js}); 
+
+    db.ref('catalogo_automoviles').once('value', async snapshot => {    
+        const data = snapshot.val();
+        console.log(data);
+        res.render('modulos/listado_automotrices', {'js_src': js, 'data': data}); 
+    }); 
 });
 
 router.get('/carcasas', (req, res) => { 
@@ -59,7 +64,7 @@ router.post('/automotrices', (req, res) => {
     // Insertamos un nuenvo registro, y lo manejamos como una promesa
     db.ref('catalogo_automoviles').push(newRegister)
         .then(resp => {
-            res.render('modulos/listado_automotrices');
+            setTimeout(() =>{ res.redirect('/automotrices'); }, 1000);
         })
         .catch(err => {
             console.log('Error: ' + err);
