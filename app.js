@@ -1,4 +1,5 @@
-const router = require('./routes/modulos');
+const routerModulos = require('./routes/modulos');
+const routerAuth = require('./routes/auth');
 const morgan = require('morgan')
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -18,7 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // Nos permitira leer los pa
 app.use(morgan('dev')); // Utiliza morgan en forma de desarrollo, muestra las peticiones en consola
 
 // Routes
-app.use(router);
+app.use(routerModulos);
+app.use(routerAuth);
 
 // Ejecutamos el server
 app.listen(app.get('port'), () => {

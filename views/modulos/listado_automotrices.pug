@@ -37,17 +37,19 @@ block contenido
                                                             td Operaciones
                                                             
                                                     tbody
-                                                        each val in data
-                                                            tr    
-                                                                td= val.clave
-                                                                td= val.cantidad
-                                                                td= val.control
-                                                                td= val.precio
-                                                                td= val.tipo
-                                                                td.float-right
-                                                                    button.btn.btn-outline-primary
-                                                                        i.fa.fa-edit
-
+                                                        if data
+                                                            each val in data
+                                                                tr    
+                                                                    td= val.clave
+                                                                    td= val.cantidad
+                                                                    td= val.control
+                                                                    td= val.precio
+                                                                    td= val.tipo
+                                                                    td.float-right
+                                                                        button.btn.btn-outline-primary
+                                                                            i.fa.fa-edit
+                                                        //else 
+                                                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit debitis ab molestiae inventore ipsam. Sapiente ducimus aliquam possimus sint saepe qui incidunt molestiae, sit magni necessitatibus libero nam laboriosam quo.
 
                                                 //table.table.table-stipped.table-hover#table-automotriz
                                                     thead.text-warning

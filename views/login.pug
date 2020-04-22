@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Cerrajeria Bustamante
+        // BEGING STYLES
+        link(rel="stylesheet", href="js/template/css/bootstrap.min.css")
+
+    body.bg-light.container
+        
+        .row.align-items-center.vh-100
+            .col-sm-8.offset-2
+                .card.shadow-lg
+                    .card-body.p-5
+                        form(method="POST")
+                            .row
+                                .col-sm-8.offset-2
+                                    h5.mb-3.text-warning Bienvenido a Cerrajeria Bustamante
+                                    .form-group
+                                        label(for="correo") Correo electr&oacute;nico
+                                        input.form-control(type="text" name="correo" placeholder="Correo electrónico")
+                                    .form-group
+                                        label(for="password") Contraseña
+                                        input.form-control(type="password" name="password" placeholder="Contraseña")
+                            .row
+                                .col-sm-8.offset-2.text-right
+                                        button.btn.btn-info.shadow(type="submit") Accesar
+                                        button.btn.btn-light.ml-2.shadow(type="button") Registrarse
+                                    
+                        
+
+
+
+        // START JS BOOSTRAP
+        script(src='js/template/js/jquery.min.js')
+        script(src='js/template/js/popper.js')
+        script(src='js/template/js/bootstrap.min.js')
