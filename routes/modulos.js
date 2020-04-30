@@ -1,10 +1,9 @@
-//require('dotenv').config;
 const express = require('express');
 const router = express.Router();
-const admin = require('../private/firebase');
-const db = admin.database();
+const db = require('../private/firebase').database();
 
-// Establecemos las rutas GET
+// START RUTAS GET
+
 router.get('/', (req, res) => {
     res.render('index', { data: '' });
 });
@@ -19,6 +18,13 @@ router.get('/automotrices', (req, res) => {
         console.log(data);
         res.render('modulos/listado_automotrices', {'js_src': js, 'data': data}); 
     }); 
+});
+
+router.get('/automotrices/:id', (req, res) => {
+
+})
+.delete((req, res) => {
+    res.send('haz elimnado');
 });
 
 router.get('/carcasas', (req, res) => { 
@@ -49,8 +55,10 @@ router.get('/servicios', (req, res) => {
     res.render('modulos/listado_servicios', {'js_src': js}); 
 });
 
+// END RUTAS GET
 
-// Establecemos las rutas POST
+// START RUTAS POST
+
 router.post('/automotrices', (req, res) => {
     console.log(req.body);
     const newRegister = {
@@ -70,5 +78,7 @@ router.post('/automotrices', (req, res) => {
             console.log('Error: ' + err);
         });
 });
+
+// END RUTAS POST
 
 module.exports = router;
