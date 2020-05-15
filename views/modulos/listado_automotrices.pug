@@ -25,30 +25,35 @@ block contenido
                                     section    
                                         .row
                                             .col-sm-12    
-                                                table.table.table-striped.table-hover#table-automotriz
+                                                table.table.table-striped.table-hover#table-automotrices
                                                     thead
                                                         tr
-                                                            td Clave
-                                                            td Existencia
-                                                            td Control
-                                                            td Precio
-                                                            td Tipo
-                                                            td Operaciones
+                                                            th.hidden ID
+                                                            th Clave
+                                                            th Existencia
+                                                            th Control
+                                                            th Precio
+                                                            th Tipo
+                                                            th Operaciones
                                                             
                                                     tbody
                                                         if data
                                                             each val in data
-                                                                tr    
+                                                                tr
+                                                                    td.hidden= val._id    
                                                                     td= val.clave
                                                                     td= val.existencia
                                                                     td= val.control
                                                                     td= val.precio
                                                                     td= val.tipo
                                                                     td.float-right
-                                                                        button.btn.btn-outline-primary
-                                                                            i.fa.fa-edit
-                                                                        button.btn.btn-outline-danger.ml-1
-                                                                            i.fa.fa-trash            
+                                                                        form.d-inline-block(action="")
+                                                                            button.btn.btn-outline-primary
+                                                                                i.fa.fa-edit
+                                                                        form.d-inline-block.ml-1(action=`/automotrices/${val._id}?_method=DELETE` method="POST")
+                                                                            input(type="hidden" name="_method" value="DELETE")
+                                                                            button.btn.btn-outline-danger
+                                                                                i.fa.fa-trash        
 
         // Modal
         #modalAutomotris.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalAutomotricesLabel' aria-hidden="false")

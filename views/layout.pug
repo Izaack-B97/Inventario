@@ -8,11 +8,11 @@ head
   link(rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css")
   // FONTAWENSOME
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-  // CSS
-  link(rel='stylesheet' href='css/main.css')
   // TEMPLATE CSS - BOOTSTRAP
   link(rel="stylesheet", href="js/template/css/style.css")
   link(rel="stylesheet", href="js/template/css/bootstrap.min.css")
+  // CSS
+  link(rel='stylesheet' href='css/main.css')
 body  
   .wrapper.d-flex.align-items-stretch
     nav#sidebar.active
@@ -68,8 +68,12 @@ body
           #navbarSupportedContent.collapse.navbar-collapse
             ul.nav.navbar-nav.ml-auto
               li.nav-item
-                a.nav-link(href='#') Salir
-      
+                a.nav-link(href='/salir') Salir
+                
+      //Toast Messages
+      block messages
+        include helpers/messages
+
       block contenido
         //Area donde se dibujara el contenido
         

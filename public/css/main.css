@@ -20,11 +20,12 @@ html{
 
 /* MODALES */
 
-.center-modal-v100{
-  margin-top: 100px;
-}
 
 /* HELPERS */
-.minh-100{
-  height: 100vh;
+.hidden{
+  display: none;
+}
+
+.vw-20{
+  width: 20%;
 }

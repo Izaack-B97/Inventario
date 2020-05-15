@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 
+// ***************** Otras Rutas  *********************** /
 router.get('/', (req, res) => {
     res.render('index', { data: '' });
 });
@@ -12,6 +13,9 @@ router.get('/login', (req, res) => {
     res.render('login', { data: '' });
 });
 
+router.get('/salir', (req, res) => {
+    res.send('Haz salido');
+});
 
 // ***************** Rutas Automotrices  *********************** /
 router.get('/automotrices', (req, res) => { 
@@ -26,16 +30,18 @@ router.get('/automotrices', (req, res) => {
         })
         .catch(er => {
             console.log(err);
-        })
-
+        });
 });
 
 router.post('/automotrices', async (req, res) => {
-    try {
+    try {   
         let { clave, precio, existencia, tipo, control } = req.body;
+        console.log(req.body);
+        
         let newRegister = new Automotriz({ clave, precio, existencia, tipo, control });
         // Guardamos el nuevo registro
-        let result = newRegister.save();
+        let result = await newRegister.save();
+        console.log(result);
         res.redirect('/automotrices');
     } catch (error) {
         console.log(error);
@@ -43,6 +49,18 @@ router.post('/automotrices', async (req, res) => {
  
 });
 
+router.delete('/automotrices/:id', (req, res) => {
+    let id = req.params.id;
+    
+    Automotriz.findByIdAndDelete(id)
+        .then(result => {
+            req.flash('success_msg', `Se ha eliminado correctamente`);
+            res.redirect('/automotrices');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
 // ***************** Rutas Carcasas  *********************** /
 router.get('/carcasas', (req, res) => { 
     let js = [
