@@ -26,7 +26,7 @@ router.get('/automotrices', (req, res) => {
     Automotriz.find()
         .then(result => {
             let data = result;
-            res.render('modulos/listado_automotrices', {'js_src': js, 'data': data}); 
+            res.render('modulos/automotrices/listado_automotrices', {'js_src': js, 'data': data}); 
         })
         .catch(er => {
             console.log(err);
@@ -61,6 +61,39 @@ router.delete('/automotrices/:id', (req, res) => {
             console.log(err);
         });
 });
+
+router.get('/automotrices/editar/:id', (req, res) => {
+    let id = req.params.id;
+    let js = [
+        { js: '/js/modulos/editar_automotrices.js' }
+    ];
+
+    Automotriz.findById(id)
+        .then(result => {
+            let data = result;
+            res.render('modulos/automotrices/editar-automotrices', { js_src: js ,data: data });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+});
+
+router.put('/automotrices/editar/:id', (req, res) => {
+    let data = req.body;
+    let id = req.params.id;
+
+    Automotriz.updateOne({ _id: id }, data)
+        .then(result => {
+            let data = result;
+            res.redirect('/automotrices');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+
+
 // ***************** Rutas Carcasas  *********************** /
 router.get('/carcasas', (req, res) => { 
     let js = [

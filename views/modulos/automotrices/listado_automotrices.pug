@@ -1,4 +1,4 @@
-extends ../layout.pug
+extends ../../layout.pug
 
 block contenido
     .container    
@@ -47,9 +47,8 @@ block contenido
                                                                     td= val.precio
                                                                     td= val.tipo
                                                                     td.float-right
-                                                                        form.d-inline-block(action="")
-                                                                            button.btn.btn-outline-primary
-                                                                                i.fa.fa-edit
+                                                                        a.btn.btn-outline-primary(href=`/automotrices/editar/${val._id}`)
+                                                                            i.fa.fa-edit
                                                                         form.d-inline-block.ml-1(action=`/automotrices/${val._id}?_method=DELETE` method="POST")
                                                                             input(type="hidden" name="_method" value="DELETE")
                                                                             button.btn.btn-outline-danger
@@ -73,7 +72,7 @@ block contenido
                                 .col-sm-6
                                     .form-group
                                         label(for="Cantidad") Existencia
-                                        input.form-control(type="number" name="existencia")
+                                        input.form-control(type="number" name="existencia" )
                                 .col-sm-6
                                     .form-group
                                         label(for="Control") Control
@@ -82,7 +81,7 @@ block contenido
                                     .form-group
                                         label(for="Tipo") Tipo
                                         select#Tipo.form-control(name="tipo")
-                                            option(value="")
+                                            option(value="") Seleccione
                                             option(value="Chip") Chip
                                             option(value="Convencional") Convencional
                                 .col-sm-6
