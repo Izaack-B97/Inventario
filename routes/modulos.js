@@ -1,32 +1,49 @@
+const Automotriz = require('../private/models/automoviles'); 
+
 const express = require('express');
 const router = express.Router();
-const db = require('../private/firebase').database();
 
-// START RUTAS GET
 
 router.get('/', (req, res) => {
     res.render('index', { data: '' });
 });
 
+router.get('/login', (req, res) => {
+    res.render('login', { data: '' });
+});
+
+
+// ***************** Rutas Automotrices  *********************** /
 router.get('/automotrices', (req, res) => { 
     let js = [
         {js: '/js/modulos/listado_automotriz.js'}
     ];
 
-    db.ref('catalogo_automoviles').once('value', async snapshot => {    
-        const data = snapshot.val();
-        console.log(data);
-        res.render('modulos/listado_automotrices', {'js_src': js, 'data': data}); 
-    }); 
+    Automotriz.find()
+        .then(result => {
+            let data = result;
+            res.render('modulos/listado_automotrices', {'js_src': js, 'data': data}); 
+        })
+        .catch(er => {
+            console.log(err);
+        })
+
 });
 
-router.get('/automotrices/:id', (req, res) => {
-
-})
-.delete((req, res) => {
-    res.send('haz elimnado');
+router.post('/automotrices', async (req, res) => {
+    try {
+        let { clave, precio, existencia, tipo, control } = req.body;
+        let newRegister = new Automotriz({ clave, precio, existencia, tipo, control });
+        // Guardamos el nuevo registro
+        let result = newRegister.save();
+        res.redirect('/automotrices');
+    } catch (error) {
+        console.log(error);
+    }
+ 
 });
 
+// ***************** Rutas Carcasas  *********************** /
 router.get('/carcasas', (req, res) => { 
     let js = [
         {js: '/js/modulos/listado_carcasas.js'}
@@ -34,6 +51,7 @@ router.get('/carcasas', (req, res) => {
     res.render('modulos/listado_carcasas', {'js_src': js}); 
 });
 
+// ***************** Rutas Controles *********************** /
 router.get('/controles', (req, res) => { 
     let js = [
         {js: '/js/modulos/listado_controles.js'}
@@ -41,6 +59,7 @@ router.get('/controles', (req, res) => {
     res.render('modulos/listado_controles', {'js_src': js}); 
 });
 
+// ***************** Rutas Residenciales  *********************** /
 router.get('/residenciales', (req, res) => { 
     let js = [
         {js: '/js/modulos/listado_residenciales.js'}
@@ -48,37 +67,12 @@ router.get('/residenciales', (req, res) => {
     res.render('modulos/listado_residenciales', {'js_src': js}); 
 });
 
+// ***************** Rutas Servicios  *********************** /
 router.get('/servicios', (req, res) => {
     let js = [
         {js: '/js/modulos/listado_servicios.js'}
     ];
     res.render('modulos/listado_servicios', {'js_src': js}); 
 });
-
-// END RUTAS GET
-
-// START RUTAS POST
-
-router.post('/automotrices', (req, res) => {
-    console.log(req.body);
-    const newRegister = {
-        clave: req.body.Clave,
-        cantidad: req.body.Cantidad,
-        control: req.body.Control,
-        tipo: req.body.Tipo,
-        precio: req.body.Precio 
-    };
-
-    // Insertamos un nuenvo registro, y lo manejamos como una promesa
-    db.ref('catalogo_automoviles').push(newRegister)
-        .then(resp => {
-            setTimeout(() =>{ res.redirect('/automotrices'); }, 1000);
-        })
-        .catch(err => {
-            console.log('Error: ' + err);
-        });
-});
-
-// END RUTAS POST
 
 module.exports = router;
