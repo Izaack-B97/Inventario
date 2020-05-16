@@ -5,7 +5,7 @@ html{
 
 /* START SIDEBAR */
 #sidebar-menu li:hover{
-  background: #e7d428; 
+  background: rgba(0, 0, 0, 0.4); 
 }
 
 /* START COMPLEMENTOS */
@@ -20,6 +20,12 @@ html{
 
 /* MODALES */
 
-.center-modal-v100{
-  margin-top: 100px;
+
+/* HELPERS */
+.hidden{
+  display: none;
+}
+
+.vw-20{
+  width: 20%;
 }

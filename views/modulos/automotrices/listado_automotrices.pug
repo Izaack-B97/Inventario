@@ -1,0 +1,99 @@
+extends ../../layout.pug
+
+block contenido
+    .container    
+        section
+            ol.breadcrumb.bg-white.letra-chica
+                li.breadcrumb-item
+                    a(href="/") Inicio
+                li.breadcrumb-item Automotrices
+                li.breadcrumb-item.active Listado    
+                
+        section             
+            .row    
+                .col-sm-12.px-5
+                            .card.shadow.p-3.mb-5.rounded
+                                .card-body    
+                                    section
+                                        .row
+                                            .col-sm-12
+                                                h3.text-primary Listado de Automoviles
+                                                    button.btn.btn-outline-warning.float-right#btnCrear CREAR REGISTRO
+                                            .col-lg-12.my-3
+                                                articule
+                                                    p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at est magni minus repellat enim.
+                                    section    
+                                        .row
+                                            .col-sm-12    
+                                                table.table.table-striped.table-hover#table-automotrices
+                                                    thead
+                                                        tr
+                                                            th.hidden ID
+                                                            th Clave
+                                                            th Existencia
+                                                            th Control
+                                                            th Precio
+                                                            th Tipo
+                                                            th Operaciones
+                                                            
+                                                    tbody
+                                                        if data
+                                                            each val in data
+                                                                tr
+                                                                    td.hidden= val._id    
+                                                                    td= val.clave
+                                                                    td= val.existencia
+                                                                    td= val.control
+                                                                    td= val.precio
+                                                                    td= val.tipo
+                                                                    td.float-right
+                                                                        a.btn.btn-outline-primary(href=`/automotrices/editar/${val._id}`)
+                                                                            i.fa.fa-edit
+                                                                        form.d-inline-block.ml-1(action=`/automotrices/${val._id}?_method=DELETE` method="POST")
+                                                                            input(type="hidden" name="_method" value="DELETE")
+                                                                            button.btn.btn-outline-danger
+                                                                                i.fa.fa-trash        
+
+        // Modal
+        #modalAutomotris.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalAutomotricesLabel' aria-hidden="false")
+            .modal-dialog.modal-dialog-centered.modal-lg(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title.text-primary CREAR REGISTRO
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden) &times;
+                    .modal-body
+                        form(action="/automotrices" method='POST')
+                            .row
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Clave") Clave
+                                        input.form-control(type="text" name="clave" autofocus)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Cantidad") Existencia
+                                        input.form-control(type="number" name="existencia" )
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Control") Control
+                                        input.form-control(type="text" name="control")
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Tipo") Tipo
+                                        select#Tipo.form-control(name="tipo")
+                                            option(value="") Seleccione
+                                            option(value="Chip") Chip
+                                            option(value="Convencional") Convencional
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Precio") Precio
+                                        input.form-control(type="text" name="precio")
+                            hr
+                            .row
+                                .col-sm-12.text-right
+                                    button.btn.btn-outline-primary.shadow(type="submit") Crear registro
+                                    button.btn.btn-secondary.ml-2.shadow(type="button" data-dismiss="modal") Cancelar
+                    //.modal-footer
+                        button.btn.btn-outline-primary(type="button") Actualizar
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Cancelar 
+                                                

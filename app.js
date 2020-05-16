@@ -1,5 +1,7 @@
 require('dotenv').config();
 require('./private/database');
+
+const routerFuncionesApp = require('./routes/helpers/funcionesApp');
 const routerModulos = require('./routes/modulos');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
@@ -38,6 +40,8 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(routerModulos);
+app.use(routerFuncionesApp);
+
 
 // Ejecutamos el server
 app.listen(app.get('port'), () => {
