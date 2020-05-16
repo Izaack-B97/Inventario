@@ -17,6 +17,10 @@ router.get('/salir', (req, res) => {
     res.send('Haz salido');
 });
 
+router.get('/data', (req, res) => {
+    res.json('Hola')
+});
+
 // ***************** Rutas Automotrices  *********************** /
 router.get('/automotrices', (req, res) => { 
     let js = [

@@ -5,7 +5,7 @@ html{
 
 /* START SIDEBAR */
 #sidebar-menu li:hover{
-  background: #e7d428; 
+  background: rgba(0, 0, 0, 0.4); 
 }
 
 /* START COMPLEMENTOS */
