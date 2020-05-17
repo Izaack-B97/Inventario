@@ -1,8 +1,6 @@
-const Automotriz = require('../private/models/automoviles'); 
-
 const express = require('express');
 const router = express.Router();
-
+const app = require('../routes/helpers/funcionesApp');
 
 // ***************** Otras Rutas  *********************** /
 router.get('/', (req, res) => {
@@ -17,49 +15,16 @@ router.get('/salir', (req, res) => {
     res.send('Haz salido');
 });
 
-router.get('/data', (req, res) => {
-    res.json('Hola')
-});
-
 // ***************** Rutas Automotrices  *********************** /
 router.get('/automotrices', (req, res) => { 
     let js = [
         {js: '/js/modulos/listado_automotriz.js'}
     ];
 
-    Automotriz.find()
+    app.getData('automotrices/data')
         .then(result => {
-            let data = result;
+            let data = result.data;
             res.render('modulos/automotrices/listado_automotrices', {'js_src': js, 'data': data}); 
-        })
-        .catch(er => {
-            console.log(err);
-        });
-});
-
-router.post('/automotrices', async (req, res) => {
-    try {   
-        let { clave, precio, existencia, tipo, control } = req.body;
-        console.log(req.body);
-        
-        let newRegister = new Automotriz({ clave, precio, existencia, tipo, control });
-        // Guardamos el nuevo registro
-        let result = await newRegister.save();
-        console.log(result);
-        res.redirect('/automotrices');
-    } catch (error) {
-        console.log(error);
-    }
- 
-});
-
-router.delete('/automotrices/:id', (req, res) => {
-    let id = req.params.id;
-    
-    Automotriz.findByIdAndDelete(id)
-        .then(result => {
-            req.flash('success_msg', `Se ha eliminado correctamente`);
-            res.redirect('/automotrices');
         })
         .catch(err => {
             console.log(err);
@@ -72,29 +37,15 @@ router.get('/automotrices/editar/:id', (req, res) => {
         { js: '/js/modulos/editar_automotrices.js' }
     ];
 
-    Automotriz.findById(id)
+    app.getData('automotrices/data/' + id)
         .then(result => {
-            let data = result;
+            let data = result.data;
             res.render('modulos/automotrices/editar-automotrices', { js_src: js ,data: data });
         })
         .catch(err => {
             console.log(err);
         });
 
-});
-
-router.put('/automotrices/editar/:id', (req, res) => {
-    let data = req.body;
-    let id = req.params.id;
-
-    Automotriz.updateOne({ _id: id }, data)
-        .then(result => {
-            let data = result;
-            res.redirect('/automotrices');
-        })
-        .catch(err => {
-            console.log(err);
-        });
 });
 
 

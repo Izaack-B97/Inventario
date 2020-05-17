@@ -18,13 +18,14 @@ block contenido
                                         .row
                                             .col-sm-12
                                                 h3.text-primary Editar en Automoviles
-                                                    small.float-right.text-warning # #{ data._id }
+                                                    small.float-right.text-warning#id #{ data._id } 
+                                                    small.float-right.text-warning ID-
                                                     input#inputData(type="hidden" value=data)
                                             .col-lg-12.my-3
                                                 articule
                                                     p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at 
                                     section
-                                        form(action=`/automotrices/editar/${data._id}?_method=PUT` method="POST")  
+                                        form(method="POST")  
                                             input(type="hidden" name="_method" value="PUT")
                                             .row
                                                 .col-sm-6
@@ -53,5 +54,5 @@ block contenido
                                             hr
                                             .row
                                                 .col-sm-12.text-right
-                                                    button.btn.btn-outline-primary.shadow(type="submit") Actualizar registro
+                                                    button.btn.btn-outline-primary.shadow(type="submit")#btnRegistrar Actualizar registro
                                                     a.btn.btn-secondary.ml-2.text-white.shadow(type="button" href="/automotrices") Cancelar

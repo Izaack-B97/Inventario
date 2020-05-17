@@ -1,52 +1,27 @@
-const Automotriz = require('../../private/models/automoviles');
+const axios = require('axios');
 
-const express = require('express');
-const router = express.Router();
+module.exports = {
+    getData: async (ruta) => {
+        try {
+            return await axios.get(`${process.env.APP_URL}${ruta}`);
+        } catch(err) {
+            throw new Error(`Ha ocurrido un error: ${err}`);
+        }
+    },
 
-router.get('/automotrices/data', (req, res) => {
-    Automotriz.find()
-        .then(result => {
-            res.status(200).json(result);
-        })
-        .catch(err => {
-            console.log(`Ha ocurrido un error: ${err}`);
-        })
-});
+    // postOnDB: async (ruta, datos) => {
+    //     try {
+    //         return await axios.post(`${process.env.APP_URL}${ruta}`, datos);
+    //     } catch(err) {
+    //         throw new Error(`Ha ocurrido un error: ${err}`);
+    //     }
+    // },
 
-module.exports = router;
-
-// const axios = require(axios);
-
-// module.exports = {
-//     getFromDatabase: async (ruta) => {
-//         try {
-//             return await axios.get(`http://localhost:8000/${ruta}`);
-//         } catch (err) {
-//             console.log(`Ha ocurrido un error ${err}`);
-//         }
-//     },
-
-//     postToDatabase: async (ruta) => {
-//         try {
-//             return await axios.post(`http://localhost:8000/${ruta}`);
-//         } catch (err) {
-//             console.log(`Ha ocurrido un error ${err}`);
-//         }
-//     },
-
-//     putToDatabase: async (ruta) => {
-//         try {
-//             return await axios.put(`http://localhost:8000/${ruta}`);
-//         } catch (err) {
-//             console.log(`Ha ocurrido un error ${err}`);
-//         }
-//     },
-
-//     deleteToDatabase: async (ruta) => {
-//         try {
-//             return await axios.delete(`http://localhost:8000/${ruta}`);
-//         } catch (err) {
-//             console.log(`Ha ocurrido un error ${err}`);
-//         }
-//     },
-// };
+    // putToApi: async (ruta, datos) => {
+    //     try {
+    //         return await axios.put(`${process.env.APP_URL}${ruta}`, datos);
+    //     } catch(err) {
+    //         throw new Error(`Ha ocurrido un error: ${err}`);
+    //     }
+    // }
+};
