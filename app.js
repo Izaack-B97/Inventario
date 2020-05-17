@@ -1,8 +1,7 @@
 require('dotenv').config();
 require('./private/database');
-const routerFuncionesApp = require('./routes/helpers/funcionesApp');
+const routerRutasHelpers = require('./routes/helpers/rutasHelpers');
 const routerModulos = require('./routes/modulos');
-const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 const morgan = require('morgan')
@@ -22,7 +21,6 @@ app.set('public', __dirname + '/public');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // Nos permitira leer los parametros que mandan en una peticion post
 app.use(morgan('dev')); // Utiliza morgan en forma de desarrollo, muestra las peticiones en consola
-app.use(methodOverride('_method'));
 app.use(session({
     secret: 'palabra-secreta-2020',
     resave: true,
@@ -39,7 +37,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(routerModulos);
-app.use(routerFuncionesApp);
+app.use(routerRutasHelpers);
 
 // Ejecutamos el server
 app.listen(app.get('port'), () => {
