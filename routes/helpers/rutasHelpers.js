@@ -34,6 +34,7 @@ router.post('/automotrices/crear', (req, res) => {
     let newRegister = new Automotriz(data);
     newRegister.save()
         .then(result => {
+            req.flash('success_msg', 'Registro satisfactorio');
             res.status(200).json(result);
         })
         .catch(err => {

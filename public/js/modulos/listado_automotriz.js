@@ -1,4 +1,5 @@
 console.log('--- Entrando a listado_automotriz.js ---');
+console.log($('#inputMessage').val());
 
 $('#table-automotrices').DataTable();
 

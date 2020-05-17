@@ -1,0 +1,6 @@
+if success_msg[0] != null
+    .alert.alert-success.alert-dismissible.fade.show(role='alert')
+        input#inputMessage(type="hidden" value=success_msg[0])
+        strong #{ success_msg[0] }
+        button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
