@@ -1,7 +1,7 @@
 extends ../layout.pug
 
 block contenido
-    .container
+
         section
             ol.breadcrumb.bg-white.letra-chica
                 li.breadcrumb-item
@@ -97,16 +97,16 @@ block contenido
                                                         button.btn.btn-outline-danger.ml-1(type="button")
                                                             i.fa.fa-trash
         
-    // Modal
-    #modalCarcasas.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalServiciosLabel' aria-hidden="true")
-        .modal-dialog(role="document")
-            .modal-content.center-modal-v100
-                .modal-header
-                    h5.modal-title Modal title
-                    button.close(type="button" data-dismiss="modal" aria-label="Close")
-                        span(aria-hidden) &times;
-                .modal-body
-                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                .modal-footer
-                    button.btn.btn-secondary(type="button" data-dismiss="modal") Close
-                    button.btn.btn-primary(type="button") Save Changest
+        // Modal
+        #modalCarcasas.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalServiciosLabel' aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content.center-modal-v100
+                    .modal-header
+                        h5.modal-title Modal title
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden) &times;
+                    .modal-body
+                        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                    .modal-footer
+                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                        button.btn.btn-primary(type="button") Save Changest

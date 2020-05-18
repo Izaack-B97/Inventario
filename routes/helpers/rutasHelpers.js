@@ -1,6 +1,6 @@
 const Automotriz = require('../../private/models/automoviles');
-const chalk = require('chalk');
 
+const chalk = require('chalk');
 const express = require('express');
 const router = express.Router();
 
@@ -8,7 +8,6 @@ const router = express.Router();
 // Rutas Automotrices para DB
 
 router.get('/automotrices/data', (req, res) => {
-
 
     Automotriz.find()
         .then(result => {
@@ -33,13 +32,13 @@ router.get('/automotrices/data/:id', (req, res) => {
 });
 
 router.post('/automotrices/crear', (req, res) => {
-    console.log(chalk.blue('GET en /automotrices/crear'));
+    console.log(chalk.blue('POST en /automotrices/crear'));
     let data = req.body;
 
     let newRegister = new Automotriz(data);
     newRegister.save()
         .then(result => {
-            req.flash('success_msg', 'Registro satisfactorio');
+            req.flash('success_msg', 'Registro satisfactorio de llave');
             res.status(200).json(result);
         })
         .catch(err => {
@@ -54,6 +53,7 @@ router.put('/automotrices/edit/:id', (req, res) => {
     
     Automotriz.updateOne({_id: id}, data)
         .then(result => {
+            req.flash('success_msg', 'Actualizaci\u00F3n Satisfactoria de Llave')            
             res.status(200).json(result);
         })
         .catch(err => {
@@ -66,6 +66,7 @@ router.delete(`/automotrices/delete/:id`, (req, res) => {
     let id = req.params.id;
     Automotriz.findByIdAndDelete(id)
         .then(result => {
+            req.flash('success_msg', 'Eliminaci\u00F3n Satisfactoria de Llave');
             res.status(200).json(result);
         })
         .catch(err => {

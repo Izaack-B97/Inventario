@@ -32,7 +32,8 @@ app.use(flash()); /* Guarda el mensaje en el servidor*/
 // Variables Globales
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');    
-        
+    console.log(res.locals.success_msg);
+    
     next();
 });
 

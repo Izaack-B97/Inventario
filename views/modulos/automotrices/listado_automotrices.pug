@@ -1,7 +1,6 @@
 extends ../../layout.pug
 
 block contenido
-    .container    
         section
             ol.breadcrumb.bg-white.letra-chica
                 li.breadcrumb-item
@@ -48,12 +47,14 @@ block contenido
                                                                     td= val.precio
                                                                     td= val.tipo
                                                                     td.float-right
-                                                                        a.btn.btn-outline-primary(href=`/automotrices/editar/${val._id}`)
+                                                                        button.btn.btn-outline-primary.btn-ver(type="button")
+                                                                            i.fa.fa-eye
+                                                                        a.btn.btn-outline-success.ml-1(href=`/automotrices/editar/${val._id}`)
                                                                             i.fa.fa-edit
-                                                                        button.btn.btn-outline-danger.ml-2.btn-eliminar
+                                                                        button.btn.btn-outline-danger.ml-1.btn-eliminar
                                                                             i.fa.fa-trash
                                                                        
-        // Modal
+        // Modal Automotriz
         #modalAutomotris.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalAutomotricesLabel' aria-hidden="false")
             .modal-dialog.modal-dialog-centered.modal-lg(role="document")
                 .modal-content
@@ -92,7 +93,47 @@ block contenido
                                 .col-sm-12.text-right
                                     button.btn.btn-outline-primary.shadow(type="button")#btnRegistrar Crear registro
                                     button.btn.btn-secondary.ml-2.shadow(type="button" data-dismiss="modal") Cancelar
-                    //.modal-footer
-                        button.btn.btn-outline-primary(type="button") Actualizar
-                        button.btn.btn-secondary(type="button" data-dismiss="modal") Cancelar 
+        // Modal Info Automotriz
+        #modalInfoAutomotriz.modal.fade.in(tab-index="-1" role="dialog" aria-labelledby='modalAutomotricesLabel' aria-hidden="false")
+            .modal-dialog.modal-dialog-centered.modal-lg(role="document")
+                .modal-content
+                    .modal-header
+                        h5.modal-title.text-primary#headerInfo 
+                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden) &times;
+                    .modal-body
+                        form(method='POST')
+                            .row
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Clave") Clave
+                                        input.form-control#inputInfoClave(type="text" name="clave" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Cantidad") Existencia
+                                        input.form-control#inputInfoExistencia(type="number" name="existencia" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Control") Control
+                                        input.form-control#inputInfoControl(type="text" name="control" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Tipo") Tipo
+                                        input.form-control#inputInfoTipo(type="text" name="tipo" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Precio") Precio
+                                        input.form-control#inputInfoPrecio(type="text" name="precio" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Creado_At") Creado
+                                        input.form-control#inputInfoCreate(type="text" name="createdAt" disabled)
+                                .col-sm-6
+                                    .form-group
+                                        label(for="Update_At") Ultima Actualizaci&oacute;n
+                                        input.form-control#inputInfoUpdate(type="text" name="updateAt" disabled)
+                            hr
+                            .row
+                                .col-sm-12.text-right
+                                    button.btn.btn-secondary.ml-2.shadow(type="button" data-dismiss="modal") Cancelar
                                                 

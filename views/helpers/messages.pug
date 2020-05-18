@@ -1,6 +1,8 @@
 if success_msg[0] != null
-    .alert.alert-success.alert-dismissible.fade.show(role='alert')
-        input#inputMessage(type="hidden" value=success_msg[0])
-        strong #{ success_msg[0] }
-        button.close(type='button' data-dismiss='alert' aria-label='Close')
-            span(aria-hidden='true') &times;
+    .toast.mt-5.mr-5.bg-success.shadow-lg(style='position: absolute; top: 1.5em; right: 1.5em;' data-delay="3000")                
+        .toast-body.mt-2
+            h6.text-white
+                i.fa.fa-check-square.mr-2.mt-2
+                    | &nbsp; #{ success_msg[0] }
+                button.ml-2.mb-3.close.text-white-50(type='button' data-dismiss='toast' aria-label='Close')
+                    span(aria-hidden='true') &times;
