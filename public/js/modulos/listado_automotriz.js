@@ -1,13 +1,9 @@
 console.log('--- Entrando a listado_automotriz.js ---');
-console.log($('#inputMessage').val());
+// console.log($('#inputMessage').val());
 
 $('#table-automotrices').DataTable();
 
 (function(){
-    
-    $('#btnCrear').on('click', function(){
-        $('#modalAutomotris').modal();        
-    });
 
     $('#btnRegistrar').on('click', function(){
         let data = {
@@ -36,10 +32,11 @@ $('#table-automotrices').DataTable();
         deleteOnDB(`automotrices/delete/${id}`)
             .then(result => {
                 if(result.statusText === "OK"){
-                    alert('Se elimino correctamente');
+                    // alert('Se elimino correctamente');
                     setTimeout(function(){
                         softReload();
                     }, 1000);
+
                 }
             })  
             .catch(err => {

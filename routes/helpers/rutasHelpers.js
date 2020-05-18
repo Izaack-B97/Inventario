@@ -1,4 +1,5 @@
 const Automotriz = require('../../private/models/automoviles');
+const chalk = require('chalk');
 
 const express = require('express');
 const router = express.Router();
@@ -7,6 +8,8 @@ const router = express.Router();
 // Rutas Automotrices para DB
 
 router.get('/automotrices/data', (req, res) => {
+
+
     Automotriz.find()
         .then(result => {
             res.status(200).json(result);
@@ -17,6 +20,7 @@ router.get('/automotrices/data', (req, res) => {
 });
 
 router.get('/automotrices/data/:id', (req, res) => {
+    console.log(chalk.green('GET en /automotrices/data/' + req.params.id));
     let id = req.params.id;
 
     Automotriz.findById(id)
@@ -29,6 +33,7 @@ router.get('/automotrices/data/:id', (req, res) => {
 });
 
 router.post('/automotrices/crear', (req, res) => {
+    console.log(chalk.blue('GET en /automotrices/crear'));
     let data = req.body;
 
     let newRegister = new Automotriz(data);
@@ -43,6 +48,7 @@ router.post('/automotrices/crear', (req, res) => {
 });
 
 router.put('/automotrices/edit/:id', (req, res) => {
+    console.log(chalk.yellow('PUT en /automotrices/edit/' + req.params.id));
     let id = req.params.id;
     let data = req.body;
     
@@ -56,6 +62,7 @@ router.put('/automotrices/edit/:id', (req, res) => {
 });
 
 router.delete(`/automotrices/delete/:id`, (req, res) => {
+    console.log(chalk.red('DELETE en /automotrices/delete/' + req.params.id));
     let id = req.params.id;
     Automotriz.findByIdAndDelete(id)
         .then(result => {
