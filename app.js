@@ -32,7 +32,7 @@ app.use(flash()); /* Guarda el mensaje en el servidor*/
 // Variables Globales
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');    
-    console.log(res.locals.success_msg);
+    // console.log(res.locals.success_msg);
     
     next();
 });
@@ -40,7 +40,6 @@ app.use((req, res, next) => {
 // Routes
 app.use(routerModulos);
 app.use(routerRutasHelpers);
-
 
 // Ejecutamos el server
 app.listen(app.get('port'), () => {
