@@ -72,6 +72,10 @@ body
               li.nav-item
                 a.nav-link(href='/salir') Salir
       .container      
+        //#loading.hidden
+          .spinner-border.m-5.text-primary(role='status' style='font-size: 1.5em;')
+            span.sr-only Loading...
+
         //Toast Messages
         block messages
           include helpers/messages
