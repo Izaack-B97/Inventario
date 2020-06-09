@@ -26,7 +26,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-app.use(flash()); /* Guarda el mensaje en el servidor*/
+app.use(flash()); // Guarda el mensaje en el servidor
 
 
 // Variables Globales
