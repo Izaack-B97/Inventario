@@ -8,8 +8,8 @@ const intializeFormInfo = (data) => {
     $('#inputInfoControl').val(data.control);
     $('#inputInfoTipo').val(data.tipo);
     $('#inputInfoPrecio').val(data.precio);
-    $('#inputInfoCreate').val(data.createdAt);
-    $('#inputInfoUpdate').val(data.updatedAt);
+    $('#inputInfoCreate').val(moment(data.createdAt).format('DD [de] MMMM, YYYY, h:mm a'));
+    $('#inputInfoUpdate').val(moment(data.updatedAt).format('DD [de] MMMM, YYYY, h:mm a'));
 };
 
 
@@ -34,9 +34,9 @@ const intializeFormInfo = (data) => {
 
         postOnDB('automotrices/crear', data)
             .then(result => {
-                setTimeout(() => {
+                // setTimeout(() => {
                     softReload();
-                }, 1000);
+                // }, 1000);
             })
             .catch(err => {
                 console.log(err);
@@ -66,9 +66,9 @@ const intializeFormInfo = (data) => {
         deleteOnDB(`automotrices/delete/${id}`)
             .then(result => {
                 if(result.statusText === "OK"){
-                    setTimeout(function(){
+                    // setTimeout(function(){
                         softReload();
-                    }, 1000);
+                    // }, 1000);
                 }
             })  
             .catch(err => {

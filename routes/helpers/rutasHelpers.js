@@ -4,7 +4,6 @@ const chalk = require('chalk');
 const express = require('express');
 const router = express.Router();
 
-
 // Rutas Automotrices para DB
 
 router.get('/automotrices/data', (req, res) => {
@@ -53,7 +52,7 @@ router.put('/automotrices/edit/:id', (req, res) => {
     
     Automotriz.updateOne({_id: id}, data)
         .then(result => {
-            req.flash('success_msg', 'Actualizaci\u00F3n Satisfactoria de Llave')            
+            req.flash('success_msg', 'Actualizaci\u00F3n Satisfactoria de Llave');           
             res.status(200).json(result);
         })
         .catch(err => {
