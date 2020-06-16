@@ -25,7 +25,7 @@ console.log('--- editar_automotrices.js ---');
             })
             .catch(err => {
                 console.log(err);
-            })
+            });
     });
 
 })();

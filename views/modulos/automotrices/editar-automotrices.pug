@@ -11,47 +11,47 @@ block contenido
         section             
             .row    
                 .col-sm-12.px-5
-                            .card.shadow.p-3.mb-5.rounded
-                                .card-body    
-                                    section
-                                        .row
-                                            .col-sm-12
-                                                h3.text-primary Editar en Automoviles
-                                                    small.float-right.text-warning#id #{ data._id } 
-                                                    small.float-right.text-warning ID-
-                                                    input#inputData(type="hidden" value=data)
-                                            .col-lg-12.my-3
-                                                articule
-                                                    p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at 
-                                    section
-                                        form(method="POST")  
-                                            input(type="hidden" name="_method" value="PUT")
-                                            .row
-                                                .col-sm-6
-                                                    .form-group
-                                                        label(for="Clave") Clave
-                                                        input.form-control#inputClave(type="text" name="clave" value=data.clave autofocus)
-                                                .col-sm-6
-                                                    .form-group
-                                                        label(for="Cantidad") Existencia
-                                                        input.form-control#inputExistencia(type="number" name="existencia" value=data.existencia)
-                                                .col-sm-6
-                                                    .form-group
-                                                        label(for="Control") Control
-                                                        input.form-control#inputControl(type="text" name="control" value=data.control)
-                                                .col-sm-6
-                                                    .form-group
-                                                        label(for="Tipo") Tipo
-                                                        select#selectTipo.form-control(name="tipo")
-                                                            option(value="") Seleccione
-                                                            option(value="Chip") Chip
-                                                            option(value="Convencional") Convencional
-                                                .col-sm-6
-                                                    .form-group
-                                                        label(for="Precio") Precio
-                                                        input.form-control#inputPrecio(type="text" name="precio" value=data.precio)
-                                            hr
-                                            .row
-                                                .col-sm-12.text-right
-                                                    button.btn.btn-outline-primary.shadow(type="submit")#btnRegistrar Actualizar registro
-                                                    a.btn.btn-secondary.ml-2.text-white.shadow(type="button" href="/automotrices") Cancelar
+                    .card.shadow.p-3.mb-5.rounded
+                        .card-body    
+                            section
+                                .row
+                                    .col-sm-12
+                                        h3.text-primary Editar en Automoviles
+                                            small.float-right.text-warning#id #{ data._id } 
+                                            small.float-right.text-warning ID-
+                                            input#inputData(type="hidden" value=data)
+                                    .col-lg-12.my-3
+                                        articule
+                                            p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, veniam aut aliquam amet ullam sed, doloremque reiciendis illo nihil illum dolor maxime ad similique at 
+                            section
+                                form(method="POST")  
+                                    input(type="hidden" name="_method" value="PUT")
+                                    .row
+                                        .col-sm-6
+                                            .form-group
+                                                label(for="Clave") Clave
+                                                input.form-control#inputClave(type="text" name="clave" value=data.clave autofocus)
+                                        .col-sm-6
+                                            .form-group
+                                                label(for="Cantidad") Existencia
+                                                input.form-control#inputExistencia(type="number" name="existencia" value=data.existencia)
+                                        .col-sm-6
+                                            .form-group
+                                                label(for="Control") Control
+                                                input.form-control#inputControl(type="text" name="control" value=data.control)
+                                        .col-sm-6
+                                            .form-group
+                                                label(for="Tipo") Tipo
+                                                select#selectTipo.form-control(name="tipo")
+                                                    option(value="") Seleccione
+                                                    option(value="Chip") Chip
+                                                    option(value="Convencional") Convencional
+                                        .col-sm-6
+                                            .form-group
+                                                label(for="Precio") Precio
+                                                input.form-control#inputPrecio(type="text" name="precio" value=data.precio)
+                                    hr
+                                    .row
+                                        .col-sm-12.text-right
+                                            button.btn.btn-outline-primary.shadow(type="submit")#btnRegistrar Actualizar registro
+                                            a.btn.btn-secondary.ml-2.text-white.shadow(type="button" href="/automotrices") Cancelar

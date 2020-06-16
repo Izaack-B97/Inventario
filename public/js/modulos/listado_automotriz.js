@@ -1,6 +1,9 @@
 console.log('--- Entrando a listado_automotriz.js ---');
 // console.log($('#inputMessage').val());
 
+// TODO: Probando Todo higlight
+// FIXME: Probando el fixme
+
 const intializeFormInfo = (data) => {
     $('#headerInfo').html(`INFORMACI&Oacute;N DE ${data._id}`);
     $('#inputInfoClave').val(data.clave);
@@ -12,9 +15,7 @@ const intializeFormInfo = (data) => {
     $('#inputInfoUpdate').val(moment(data.updatedAt).format('DD [de] MMMM, YYYY, h:mm a'));
 };
 
-
 (function(){
-
     const dt_automotrices = $('#table-automotrices').DataTable();
 
     $('.toast').toast('show');  

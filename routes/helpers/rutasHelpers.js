@@ -32,7 +32,7 @@ router.get('/automotrices/data/:id', (req, res) => {
 
 router.post('/automotrices/crear', (req, res) => {
     console.log(chalk.blue('POST en /automotrices/crear'));
-    let data = req.body;
+    let data = req.body; 
 
     let newRegister = new Automotriz(data);
     newRegister.save()
@@ -42,6 +42,7 @@ router.post('/automotrices/crear', (req, res) => {
         })
         .catch(err => {
             console.log(`Ha ocurrido un error ${err}`);
+            req.flash('error_msg', err);            
         });
 });
 
@@ -53,6 +54,8 @@ router.put('/automotrices/edit/:id', (req, res) => {
     Automotriz.updateOne({_id: id}, data)
         .then(result => {
             req.flash('success_msg', 'Actualizaci\u00F3n Satisfactoria de Llave');           
+            console.log(req.flash);
+            
             res.status(200).json(result);
         })
         .catch(err => {
