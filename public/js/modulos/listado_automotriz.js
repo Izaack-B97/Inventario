@@ -33,7 +33,7 @@ const intializeFormInfo = (data) => {
             precio: $('#inputPrecio').val(),
         };      
 
-        postOnDB('automotrices/crear', data)
+        postOnDB('automotrices', data)
             .then(result => {
                 // setTimeout(() => {
                     softReload();
@@ -45,16 +45,14 @@ const intializeFormInfo = (data) => {
     });
 
     $('.btn-ver').on('click', function(){
-        let row = $(this).parents('tr');
+        let row = $(this).parents('tr');        
         let id = dt_automotrices.row(row).data()[0];
-
-        getData(`automotrices/data/${id}`)
+        getData(`automotrices/${id}`)
             .then(result => {
                 let data = result.data;
                 intializeFormInfo(data);
                 $('#modalInfoAutomotriz').modal();
                 console.log(data);
-                
             })
             .catch(err => {
                 console.log(err);
@@ -64,7 +62,7 @@ const intializeFormInfo = (data) => {
     $('.btn-eliminar').on('click', function(){
         let id = $(this).parents('tr').find('.id').text();
 
-        deleteOnDB(`automotrices/delete/${id}`)
+        deleteOnDB(`automotrices/${id}`)
             .then(result => {
                 if(result.statusText === "OK"){
                     // setTimeout(function(){

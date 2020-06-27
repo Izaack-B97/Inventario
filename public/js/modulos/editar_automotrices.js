@@ -17,7 +17,7 @@ console.log('--- editar_automotrices.js ---');
             precio: $('#inputPrecio').val()
         };
 
-        putOnDB(`automotrices/edit/${id}`, datos)
+        putOnDB(`automotrices/${id}`, datos)
             .then(result => {
                 if (result.statusText == "OK") {
                     window.location.href = '/automotrices';

@@ -21,7 +21,7 @@ router.get('/automotrices', (req, res) => {
         {js: '/js/modulos/listado_automotriz.js'}
     ];
 
-    app.getData('automotrices/data')
+    app.getData('automotrices/all')
         .then(result => {
             let data = result.data;
             res.render('modulos/automotrices/listado_automotrices', {'js_src': js, 'data': data}); 
@@ -37,7 +37,7 @@ router.get('/automotrices/editar/:id', (req, res) => {
         { js: '/js/modulos/editar_automotrices.js' }
     ];
 
-    app.getData('automotrices/data/' + id)
+    app.getData('automotrices/' + id)
         .then(result => {
             let data = result.data;
             res.render('modulos/automotrices/editar-automotrices', { js_src: js ,data: data });
