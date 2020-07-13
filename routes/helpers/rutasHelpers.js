@@ -1,3 +1,7 @@
+/*
+    TODO:; Terminar las rutas para los demas modulos
+*/
+
 const Automotriz = require('../../private/models/automoviles');
 
 const chalk = require('chalk');

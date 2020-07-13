@@ -1,3 +1,7 @@
+/**
+ * FIXME: Arreglar el parametro de notificacion cuando se actualiza
+ */
+
 require('dotenv').config();
 require('./private/database');
 const routerRutasHelpers = require('./routes/helpers/rutasHelpers');
