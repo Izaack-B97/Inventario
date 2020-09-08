@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const chalk = require('chalk');
 
 const MONGODB_HOST = process.env.MONGODB_HOST;
 const MONGODB_DATABASE = process.env.MONGODB_DATABASE;
@@ -14,7 +15,7 @@ mongoose.connect(MONGODB_URI,
         useCreateIndex: true
     })
     .then(() => {
-        console.log('DATABASE IS CONNECTED');
+        console.log(chalk.blue('DATABASES IS CONNECTED'));
     })
     .catch(err => {
         console.log(`Error en la bd: ${err}`); 

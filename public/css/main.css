@@ -29,3 +29,10 @@ html{
 .vw-20{
   width: 20%;
 }
+
+img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  alig
+}
